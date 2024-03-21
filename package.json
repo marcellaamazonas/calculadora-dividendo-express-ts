@@ -7,8 +7,6 @@
     "start": "nodemon src/server",
     "start:prod": "npm run build && node ./dist/src/server.js",
     "build": "npx tsc",
-    "test3": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
-    "test2": "npx babel src/test --out-dir dist/test && jest",
     "test": "jest"
   },
   "keywords": [],
