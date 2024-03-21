@@ -1,6 +1,6 @@
 import express from "express";
-import { CalculadoraService } from "../services/CalculadoraService";
-import { CalculadoraController } from "../controllers/CalculadoraController";
+import { CalculadoraService } from "../services/calculadora-service";
+import { CalculadoraController } from "../controllers/calculadora-controller";
 
 const router = express.Router();
 

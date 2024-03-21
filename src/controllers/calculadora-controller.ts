@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CalculadoraService } from "../services/CalculadoraService";
+import { CalculadoraService } from "../services/calculadora-service";
 
 export class CalculadoraController {
   private calculadoraService: CalculadoraService;
