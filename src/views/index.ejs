@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Dividendos</title>
+    <link rel="stylesheet" href="src/css/app.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Calculadora de Dividendos</h1>
+        <form method="POST" action="/calcular-dividendos" id="form">
+          <fieldset>
+            <p>
+              <label for="valor">Valor:</label>
+              <input
+                type="number"
+                name="valor"
+                id="valor"
+                placeholder="Digite o valor"
+                required
+              />
+              <span class="separator"></span>
+            </p>
+          </fieldset>
+          <fieldset>
+            <p>
+              <label for="tempo">Tempo:</label>
+              <input
+                type="number"
+                name="tempo"
+                id="tempo"
+                placeholder="Digite em meses"
+                required
+              />
+            </p>
+          </fieldset>
+          <fieldset>
+            <p>
+              <label for="taxa">Taxa aplicada:</label>
+              <label for="taxa">1% ao mês</label>
+            </p>
+          </fieldset>
+          <fieldset>
+            <p>
+              <input type="submit" id="submit" value="Enviar" />
+            </p>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <% if (resultado) { %>
+    <h1 class="resultado-container">Resultado: <%= resultado %></h1>
+    <% } %>
+
+    <br />
+
+    <% if (erros) { %>
+    <ul>
+      <% erros.forEach(function(erro) { %>
+      <li><%= erro %></li>
+      <% }); %>
+    </ul>
+    <% } %>
+
+    <script src="dist/app.bundle.js"></script>
+  </body>
+</html>
