@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CalculadoraService } from "../services/CalculadoraService";
+import { CalculadoraService } from "../services/calculadora-service";
 
 export class CalculadoraController {
   private calculadoraService: CalculadoraService;
@@ -22,19 +22,13 @@ export class CalculadoraController {
     }
 
     if (erros.length > 0) {
-      return res.render("index", {
-        resultado: null,
-        erros: erros,
-      });
+      return res.status(400).json({ erros });
     }
 
     const resultado = this.calculadoraService.calcularDividendos(
       parseFloat(valor),
       parseInt(tempo)
     );
-    res.render("index", {
-      resultado: resultado,
-      erros: null,
-    });
+    res.json({ resultado });
   }
 }
